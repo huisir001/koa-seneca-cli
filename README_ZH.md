@@ -18,9 +18,9 @@ NodeJS在I/O密集型应用中所表现的突出能力使得越来越多的开�
 | 名称          | 技术模式/框架 | 说明                                                   |
 | ------------- | ------------- | ------------------------------------------------------ |
 | 网关/负载均衡 | Nginx         | 对前后端的沟通进行统一的管理                           |
-| 配置中心      |               | 每个服务的配置统一在此便于管理                         |
-| 注册中心      |               | 对所有服务进行管理，服务必须在注册中心注册登记才能使用 |
-| 微服务        | Seneca        | 创建各种单一职责和接口分离模块(插件)                   |
+| 配置中心      | application.yaml | 每个服务都需配置，配置完成，启动当前服务后会将配置存到注册中心的缓存中  |
+| 注册中心      | serviceRegister服务(内置)  | 对所有微服务配置进行管理，服务必须注册登记才能使用       |
+| 微服务        | Seneca        | 创建各种单一职责和接口分离模块(插件)，各微服务可分布式部署到不同服务器 |
 
 
 
@@ -33,5 +33,18 @@ NodeJS在I/O密集型应用中所表现的突出能力使得越来越多的开�
 | 日志   | Log4js    |      |
 
 
+## 配置文件
+yaml配置文件阅读方便，支持多种类型（字符串、数值、布尔值、null、时间戳、数组），可注释，故而用途广泛，比json和ini等好太多。   
+Nodejs读写yaml需要用到yaml库。
+```js
+import YAML from 'yaml'
+// 读取
+const buffer = fs.readFileSync('./config.yml', 'utf8')
+const yamlStr = YAML.parse(file)
+console.log(yamlStr)
+// 写入
+const options = {a:1, b:2}
+fs.writeFileSync('config.yaml', YAML.stringify(options))
+```
 
 ## 启动

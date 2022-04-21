@@ -9,12 +9,17 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@koa/router": "^10.1.1",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
+    "koa-router": "^10.1.1",
     "koa2-cors": "^2.0.6",
     "seneca": "^3.26.2",
     "seneca-web": "^2.2.1",
     "seneca-web-adapter-koa2": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa-router": "^7.4.4",
+    "@types/seneca": "^2.1.11"
   }
 }
