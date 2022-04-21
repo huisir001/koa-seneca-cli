@@ -1,0 +1,26 @@
+{
+  "name": "koa-seneca-cli",
+  "version": "1.0.0",
+  "description": "微服务脚手架",
+  "scripts": {
+    "install": "node bin/install",
+    "add-service": "node bin/add-service",
+    "start-main-dev": "node bin/start-main-dev",
+    "start-main-test": "node bin/start-main-test"
+  },
+  "keywords": [
+    "koa",
+    "seneca",
+    "MicroService"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huisir001/node-koa-seneca-cli.git"
+  },
+  "author": "HuiSir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huisir001/node-koa-seneca-cli/issues"
+  },
+  "homepage": "https://github.com/huisir001/node-koa-seneca-cli#readme"
+}
