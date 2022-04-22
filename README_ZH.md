@@ -24,13 +24,14 @@ NodeJS在I/O密集型应用中所表现的突出能力使得越来越多的开�
 
 
 
-## 内置服务
+## 内置服务/功能
 
 | 功能   | 服务/框架 | 端口 |
 | ------ | --------- | ---- |
 | 数据库 | Mysql     |      |
-| 缓存库 | Redis     |      |
-| 日志   | Log4js    |      |
+| 数据模型/实体 | seneca-entity  |      |
+| 缓存库 | seneca-entity内置缓存、Redis |      |
+| 日志   | Seneca内置 |      |
 
 
 ## 配置文件
@@ -39,7 +40,7 @@ Nodejs读写yaml需要用到yaml库。
 ```js
 import YAML from 'yaml'
 // 读取
-const buffer = fs.readFileSync('./config.yml', 'utf8')
+const file = fs.readFileSync('./config.yaml', 'utf8')
 const yamlStr = YAML.parse(file)
 console.log(yamlStr)
 // 写入

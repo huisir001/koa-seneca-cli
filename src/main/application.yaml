@@ -1,1 +1,17 @@
 # 主服务配置
+server:
+ port: 8080
+
+# 连接注册中心
+serviceRegister:
+ type: http
+ port: 8003
+ # 若不设port端口，则需要配置pin用于匹配
+ # pin: 'code:sdaasbdjhasbnjdha'
+ # 主机地址后期可使用域名更安全
+ host: 127.0.0.1
+
+# 本地文件存储路径,尽量使用绝对路径
+# 若为null,则为默认路径：用户个人文件夹(当前用户的主目录)/程序名称(package.json中的name值)
+# 配置此项后，如上传后文件路径则为：[fileStorageDir]/upload
+fileStorageDir: null

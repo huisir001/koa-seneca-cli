@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/koa': ^2.13.4
   '@types/koa-router': ^7.4.4
+  '@types/node': ^17.0.25
   '@types/seneca': ^2.1.11
   koa: ^2.13.4
   koa-body: ^4.2.0
@@ -11,6 +12,9 @@ specifiers:
   seneca: ^3.26.2
   seneca-web: ^2.2.1
   seneca-web-adapter-koa2: ^1.2.1
+  ts-node: ^10.7.0
+  typescript: ^4.6.3
+  yaml: ^2.0.1
 
 dependencies:
   koa: r2.cnpmjs.org/koa/2.13.4
@@ -20,11 +24,15 @@ dependencies:
   seneca: 3.26.2
   seneca-web: r2.cnpmjs.org/seneca-web/2.2.1
   seneca-web-adapter-koa2: r2.cnpmjs.org/seneca-web-adapter-koa2/1.2.1_koa@2.13.4+seneca-web@2.2.1
+  yaml: 2.0.1
 
 devDependencies:
   '@types/koa': r2.cnpmjs.org/@types/koa/2.13.4
   '@types/koa-router': r2.cnpmjs.org/@types/koa-router/7.4.4
+  '@types/node': 17.0.25
   '@types/seneca': r2.cnpmjs.org/@types/seneca/2.1.11
+  ts-node: 10.7.0_de7c86b0cde507c63a0402da5b982bd3
+  typescript: 4.6.3
 
 packages:
 
@@ -188,6 +196,43 @@ packages:
       use-plugin: 9.1.0
     dev: false
 
+  /ts-node/10.7.0_de7c86b0cde507c63a0402da5b982bd3:
+    resolution: {integrity: sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': r2.cnpmjs.org/@cspotcode/source-map-support/0.7.0
+      '@tsconfig/node10': r2.cnpmjs.org/@tsconfig/node10/1.0.8
+      '@tsconfig/node12': r2.cnpmjs.org/@tsconfig/node12/1.0.9
+      '@tsconfig/node14': r2.cnpmjs.org/@tsconfig/node14/1.0.1
+      '@tsconfig/node16': r2.cnpmjs.org/@tsconfig/node16/1.0.2
+      '@types/node': 17.0.25
+      acorn: r2.cnpmjs.org/acorn/8.7.0
+      acorn-walk: r2.cnpmjs.org/acorn-walk/8.2.0
+      arg: r2.cnpmjs.org/arg/4.1.3
+      create-require: r2.cnpmjs.org/create-require/1.1.1
+      diff: r2.cnpmjs.org/diff/4.0.2
+      make-error: r2.cnpmjs.org/make-error/1.3.6
+      typescript: 4.6.3
+      v8-compile-cache-lib: 3.0.1
+      yn: r2.cnpmjs.org/yn/3.1.1
+    dev: true
+
+  /typescript/4.6.3:
+    resolution: {integrity: sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
   /use-plugin/9.1.0:
     resolution: {integrity: sha512-7RyrqYwqIRpXA0hF3Xlcs1S0liK1MfYiMzaSspQGCZWPssVdb6fEWJEz6U3WC04o8ke3bU7bt6Ov+AmzKGFEEg==}
     engines: {node: '>=10'}
@@ -198,10 +243,35 @@ packages:
       optioner: r2.cnpmjs.org/optioner/5.0.1
     dev: false
 
+  /v8-compile-cache-lib/3.0.1:
+    resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
+    dev: true
+
+  /yaml/2.0.1:
+    resolution: {integrity: sha512-1NpAYQ3wjzIlMs0mgdBmYzLkFgWBIWrzYVDYfrixhoFNNgJ444/jT2kUT2sicRbJES3oQYRZugjB6Ro8SjKeFg==}
+    engines: {node: '>= 14'}
+    dev: false
+
   /ylru/1.3.2:
     resolution: {integrity: sha512-RXRJzMiK6U2ye0BlGGZnmpwJDPgakn6aNQ0A7gHRbD4I0uvK4TW6UqkK1V0pp9jskjJBAXd3dRrbzWkqJ+6cxA==}
     engines: {node: '>= 4.0.0'}
     dev: false
+
+  r2.cnpmjs.org/@cspotcode/source-map-consumer/0.8.0:
+    resolution: {integrity: sha512-41qniHzTU8yAGbCp04ohlmSrZf8bkf/iJsl3V0dRGsQN/5GFfx+LbCSsCpp2gqrqjTVg/K6O8ycoV35JIwAzAg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz}
+    name: '@cspotcode/source-map-consumer'
+    version: 0.8.0
+    engines: {node: '>= 12'}
+    dev: true
+
+  r2.cnpmjs.org/@cspotcode/source-map-support/0.7.0:
+    resolution: {integrity: sha512-X4xqRHqN8ACt2aHVe51OxeA2HjbcL4MqFqXkrmQszJ1NOUuUu5u6Vqx/0lZSVNku7velL5FC/s5uEAj1lsBMhA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@cspotcode/source-map-support/-/source-map-support-0.7.0.tgz}
+    name: '@cspotcode/source-map-support'
+    version: 0.7.0
+    engines: {node: '>=12'}
+    dependencies:
+      '@cspotcode/source-map-consumer': r2.cnpmjs.org/@cspotcode/source-map-consumer/0.8.0
+    dev: true
 
   r2.cnpmjs.org/@hapi/address/4.1.0:
     resolution: {integrity: sha512-SkszZf13HVgGmChdHo/PxchnSaCJ6cetVqLzyciudzZRT0jcOouIF/Q93mgjw8cce+D+4F4C1Z/WrfFN+O3VHQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@hapi/address/-/address-4.1.0.tgz}
@@ -260,6 +330,30 @@ packages:
     dependencies:
       '@hapi/hoek': r2.cnpmjs.org/@hapi/hoek/9.2.1
     dev: false
+
+  r2.cnpmjs.org/@tsconfig/node10/1.0.8:
+    resolution: {integrity: sha512-6XFfSQmMgq0CFLY1MslA/CPUfhIL919M1rMsa5lP2P097N2Wd1sSX0tx1u4olM16fLNhtHZpRhedZJphNJqmZg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@tsconfig/node10/-/node10-1.0.8.tgz}
+    name: '@tsconfig/node10'
+    version: 1.0.8
+    dev: true
+
+  r2.cnpmjs.org/@tsconfig/node12/1.0.9:
+    resolution: {integrity: sha512-/yBMcem+fbvhSREH+s14YJi18sp7J9jpuhYByADT2rypfajMZZN4WQ6zBGgBKp53NKmqI36wFYDb3yaMPurITw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@tsconfig/node12/-/node12-1.0.9.tgz}
+    name: '@tsconfig/node12'
+    version: 1.0.9
+    dev: true
+
+  r2.cnpmjs.org/@tsconfig/node14/1.0.1:
+    resolution: {integrity: sha512-509r2+yARFfHHE7T6Puu2jjkoycftovhXRqW328PDXTVGKihlb1P8Z9mMZH04ebyajfRY7dedfGynlrFHJUQCg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@tsconfig/node14/-/node14-1.0.1.tgz}
+    name: '@tsconfig/node14'
+    version: 1.0.1
+    dev: true
+
+  r2.cnpmjs.org/@tsconfig/node16/1.0.2:
+    resolution: {integrity: sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@tsconfig/node16/-/node16-1.0.2.tgz}
+    name: '@tsconfig/node16'
+    version: 1.0.2
+    dev: true
 
   r2.cnpmjs.org/@types/accepts/1.3.5:
     resolution: {integrity: sha512-jOdnI/3qTpHABjM5cx1Hc0sKsPoYCp+DP/GJRGtDlPd7fiV9oXGGIcjW/ZOxLIvjGz8MA+uMZI9metHlgqbgwQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@types/accepts/-/accepts-1.3.5.tgz}
@@ -398,6 +492,27 @@ packages:
       '@types/node': 17.0.25
     dev: true
 
+  r2.cnpmjs.org/acorn-walk/8.2.0:
+    resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/acorn-walk/-/acorn-walk-8.2.0.tgz}
+    name: acorn-walk
+    version: 8.2.0
+    engines: {node: '>=0.4.0'}
+    dev: true
+
+  r2.cnpmjs.org/acorn/8.7.0:
+    resolution: {integrity: sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/acorn/-/acorn-8.7.0.tgz}
+    name: acorn
+    version: 8.7.0
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: true
+
+  r2.cnpmjs.org/arg/4.1.3:
+    resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/arg/-/arg-4.1.3.tgz}
+    name: arg
+    version: 4.1.3
+    dev: true
+
   r2.cnpmjs.org/backoff/2.5.0:
     resolution: {integrity: sha512-wC5ihrnUXmR2douXmXLCe5O3zg3GKIyvRi/hi58a/XyRxVI+3/yM0PYueQOZXPXQ9pxBislYkw+sF9b7C/RuMA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/backoff/-/backoff-2.5.0.tgz}
     name: backoff
@@ -481,6 +596,12 @@ packages:
       keygrip: r2.cnpmjs.org/keygrip/1.1.0
     dev: false
 
+  r2.cnpmjs.org/create-require/1.1.1:
+    resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/create-require/-/create-require-1.1.1.tgz}
+    name: create-require
+    version: 1.1.1
+    dev: true
+
   r2.cnpmjs.org/deep-equal/1.0.1:
     resolution: {integrity: sha512-bHtC0iYvWhyaTzvV3CZgPeZQqCOBGyGsVV7v4eevpdkLHfiSrXUdBG+qAuSz4RI70sszvjQ1QSZ98An1yNwpSw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/deep-equal/-/deep-equal-1.0.1.tgz}
     name: deep-equal
@@ -506,6 +627,13 @@ packages:
     version: 2.0.0
     engines: {node: '>= 0.8'}
     dev: false
+
+  r2.cnpmjs.org/diff/4.0.2:
+    resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/diff/-/diff-4.0.2.tgz}
+    name: diff
+    version: 4.0.2
+    engines: {node: '>=0.3.1'}
+    dev: true
 
   r2.cnpmjs.org/ee-first/1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/ee-first/-/ee-first-1.1.1.tgz}
@@ -853,6 +981,12 @@ packages:
     version: 4.17.21
     dev: false
 
+  r2.cnpmjs.org/make-error/1.3.6:
+    resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/make-error/-/make-error-1.3.6.tgz}
+    name: make-error
+    version: 1.3.6
+    dev: true
+
   r2.cnpmjs.org/media-typer/0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/media-typer/-/media-typer-0.3.0.tgz}
     name: media-typer
@@ -1132,3 +1266,10 @@ packages:
     version: 1.1.2
     engines: {node: '>= 0.8'}
     dev: false
+
+  r2.cnpmjs.org/yn/3.1.1:
+    resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/yn/-/yn-3.1.1.tgz}
+    name: yn
+    version: 3.1.1
+    engines: {node: '>=6'}
+    dev: true
