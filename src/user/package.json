@@ -1,7 +1,7 @@
 {
-  "name": "serviceregister",
+  "name": "user-service",
   "version": "1.0.0",
-  "description": "服务注册中心",
+  "description": "用户管理中心",
   "main": "index.js",
   "type": "module",
   "scripts": {

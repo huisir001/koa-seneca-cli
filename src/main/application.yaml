@@ -1,4 +1,4 @@
-# 主服务配置
+# server配置
 server:
  port: 8080
 

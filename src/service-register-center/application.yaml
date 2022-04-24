@@ -1,0 +1,20 @@
+# 服务配置
+server:
+ type: http
+ port: 8003
+ # 若不设port端口，则需要配置pin用于匹配
+ # pin: 'code:sdaasbdjhasbnjdha'
+ # 主机地址后期可使用域名更安全
+ host: 127.0.0.1
+
+# Redis
+redis:
+ host: 127.0.0.1
+ port: 6379
+ # 用户名，默认无
+ username: null
+ # 密码，默认无密码
+ password: null
+ # 存到第一个数据库里，默认为0（第一个库），redis默认有16个库
+ dbNumber: 0 
+

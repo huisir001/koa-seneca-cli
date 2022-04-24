@@ -2,13 +2,13 @@
  * @Description: 主服务启动
  * @Autor: HuiSir<273250950@qq.com>
  * @Date: 2022-04-20 16:28:38
- * @LastEditTime: 2022-04-22 18:52:10
+ * @LastEditTime: 2022-04-24 17:45:16
  */
 import Koa from 'koa'
 import koaBody from 'koa-body'
 import Seneca from 'seneca'
 import Router from 'koa-router'
-import useYamlConfigParse from './hooks/useYamlConfigParse.js'
+import useConfig from './hooks/useConfig.js'
 import useKoaBodyOptions from './hooks/useKoaBodyOptions.js'
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
@@ -18,7 +18,7 @@ const SenecaWeb = require('seneca-web') //seneca插件，将http请求映射到S
 const senecaWebAdapterKoa2 = require('seneca-web-adapter-koa2') //seneca适配koa2
 
 // 读取配置
-const { server, serviceRegister } = useYamlConfigParse()
+const { server, serviceRegister } = useConfig()
 
 // 实例化
 const app = new Koa()
@@ -37,7 +37,7 @@ app.use(router.routes())
 app.use(router.allowedMethods())
 
 // 服务启用
-app.listen(3000)
+app.listen(server.port)
 
 // 启动seneca-web插件，映射http路由到seneca
 seneca.use(SenecaWeb, {
@@ -51,9 +51,8 @@ seneca.use(SenecaWeb, {
 seneca.client(serviceRegister)
 
 // 路由匹配
-seneca.ready(() => {
-    console.log(seneca.export('web/context'))
-    app.use(seneca.export('web/context'))
-});
+// seneca.ready(() => {
+//     app.use(seneca.export('web/context'))
+// });
 
 // export default app

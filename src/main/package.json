@@ -1,12 +1,12 @@
 {
-  "name": "microservices",
+  "name": "my-micro-services",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "type": "module",
   "author": "HuiSir<273250950@qq.com>",
   "scripts": {
-    "start": "node app"
+    "start:dev": "node --loader ts-node/esm app.ts"
   },
   "license": "ISC",
   "dependencies": {
