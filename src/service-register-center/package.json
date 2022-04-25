@@ -12,8 +12,8 @@
   "author": "HuiSir",
   "license": "ISC",
   "dependencies": {
+    "ioredis": "^5.0.4",
     "seneca": "^3.26.2",
-    "seneca-redis-store": "^1.1.0",
     "yaml": "^2.0.1"
   },
   "devDependencies": {
