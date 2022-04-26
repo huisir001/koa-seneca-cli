@@ -22,7 +22,7 @@
         ]
     },
     // "include": [ // 指定编译文件位置
-    //     "src"
+    //     "types"
     // ],
     "exclude": [
         "node_modules"

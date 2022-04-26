@@ -3,20 +3,24 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node': ^17.0.25
   '@types/seneca': ^2.1.11
+  '@types/uuid': ^8.3.4
   ioredis: ^5.0.4
   seneca: ^3.26.2
   ts-node: 10.7.0
   typescript: ^4.6.3
+  uuid: ^8.3.2
   yaml: ^2.0.1
 
 dependencies:
   ioredis: 5.0.4
   seneca: 3.26.2
+  uuid: r2.cnpmjs.org/uuid/8.3.2
   yaml: 2.0.1
 
 devDependencies:
   '@types/node': 17.0.25
   '@types/seneca': r2.cnpmjs.org/@types/seneca/2.1.11
+  '@types/uuid': 8.3.4
   ts-node: 10.7.0_de7c86b0cde507c63a0402da5b982bd3
   typescript: 4.6.3
 
@@ -40,6 +44,10 @@ packages:
 
   /@types/node/17.0.25:
     resolution: {integrity: sha512-wANk6fBrUwdpY4isjWrKTufkrXdu1D2YHCot2fD/DfWxF5sMrVSA+KN7ydckvaTCh0HiqX9IVl0L5/ZoXg5M7w==}
+    dev: true
+
+  /@types/uuid/8.3.4:
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
     dev: true
 
   /debug/4.3.4:
@@ -706,6 +714,13 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz}
     name: util-deprecate
     version: 1.0.2
+    dev: false
+
+  r2.cnpmjs.org/uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/uuid/-/uuid-8.3.2.tgz}
+    name: uuid
+    version: 8.3.2
+    hasBin: true
     dev: false
 
   r2.cnpmjs.org/yn/3.1.1:

@@ -9,18 +9,25 @@ server:
 
 # Redis
 redis:
- host: 127.0.0.1
- port: 6379
- # 用户名，默认无
- username: null
- # 密码，默认无密码
- password: null
- # 存到第一个数据库里，默认为0（第一个库），redis默认有16个库
- db: 0
+ # redis连接配置
+ options:
+  host: 127.0.0.1
+  port: 6379
+  # 用户名，默认无
+  username: null
+  # 密码，默认无密码
+  password: null
+  # 存到第一个数据库里，默认为0（第一个库），redis默认有16个库
+  db: 0
+ # redis连接池
+ pool:
+  # 初始化连接数
+  initLen: 6
+  # 最大连接数
+  maxLen: 10
 
 # common
 common:
  # 表前缀，包括缓存表如redis的key和其他数据库表名
  # 表名使用大写字母+下划线命名法
  tablePrefix: KOA_
-
