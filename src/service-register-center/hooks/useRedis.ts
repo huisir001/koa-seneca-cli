@@ -2,14 +2,15 @@
  * @Description: redis实例（扩展类）
  * @Autor: HuiSir<273250950@qq.com>
  * @Date: 2022-04-24 17:42:26
- * @LastEditTime: 2022-04-26 17:49:20
+ * @LastEditTime: 2022-04-27 18:14:05
  */
 import Ioredis, { RedisOptions } from 'ioredis'
 import { v1 as uuidv1 } from 'uuid'
 export type { RedisOptions } from 'ioredis'
 
 export default class Redis extends Ioredis {
-    id: string = uuidv1()  // 数据库连接对象id
+    id: string  // 数据库连接对象id
+    useTimes: number  // 使用次数
     private locked: boolean = false // 使用时上锁，释放后解锁
 
     /**
@@ -20,6 +21,10 @@ export default class Redis extends Ioredis {
         // 若在子类构造方法中没有新的任务，可以省略子类的constructor
         super(args)
 
+        // 属性赋值
+        this.id = uuidv1()
+        this.useTimes = 0
+
         // 监听连接结果,并回调
         this
             .on('connect', function (this: any) {
@@ -28,8 +33,6 @@ export default class Redis extends Ioredis {
             .on('error', function (this: any, err) {
                 if (err.syscall === 'connect') {
                     cb(err)
-                    // 断开连接
-                    this.quit()
                 }
             })
     }
@@ -43,11 +46,16 @@ export default class Redis extends Ioredis {
     // 加锁
     lock(): void {
         this.locked = true
+        // 每次加锁使用时增加次数
+        this.useTimes++
     }
 
     // 释放（解锁）
+    // 注意每次执行语句完毕之后都要进行释放
     release(): void {
         this.locked = false
+        // 触发release事件便于捕捉
+        this.emit('release')
     }
 }
 
