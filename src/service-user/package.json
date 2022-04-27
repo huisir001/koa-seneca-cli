@@ -1,11 +1,11 @@
 {
-  "name": "user-service",
+  "name": "user",
   "version": "1.0.0",
   "description": "用户管理中心",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:dev": "node --loader ts-node/esm index.ts",
+    "start:dev": "node --loader ts-node/esm index.ts --seneca.log=level:ERROR",
     "start:test": "node --loader ts-node/esm index.ts",
     "start:pro": "node --loader ts-node/esm index.ts"
   },

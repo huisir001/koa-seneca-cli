@@ -21,10 +21,14 @@ redis:
   db: 0
  # redis连接池
  pool:
-  # 初始化连接数
-  initLen: 6
+  # 最小连接数（初始化）
+  minConnNum: 6
   # 最大连接数
-  maxLen: 10
+  maxConnNum: 10
+  # 最长等待时间（无空闲连接时等待时间）,毫秒数
+  maxWaitTime: 2000
+  # 连接最大引用次数
+  maxUseTimes: 10
 
 # common
 common:
