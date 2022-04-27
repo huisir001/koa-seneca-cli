@@ -24,7 +24,7 @@ redis:
   # 最小连接数（初始化）
   minConnNum: 6
   # 最大连接数
-  maxConnNum: 10
+  maxConnNum: 20
   # 最长等待时间（无空闲连接时等待时间）,毫秒数
   maxWaitTime: 2000
   # 连接最大引用次数

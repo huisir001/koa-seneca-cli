@@ -2,7 +2,7 @@
  * @Description: redis 连接池(自创)
  * @Autor: HuiSir<273250950@qq.com>
  * @Date: 2022-04-26 15:06:13
- * @LastEditTime: 2022-04-27 18:13:34
+ * @LastEditTime: 2022-04-27 18:39:20
  */
 import Redis, { RedisOptions } from './useRedis.js'
 import useConfig from './useConfig.js'
@@ -27,6 +27,7 @@ interface IPoolOpts {
 class Pool implements IPool {
     private pool: Redis[] = []
     private redisOpts: RedisOptions
+    private minConnNum: number
     private maxConnNum: number
     private maxWaitTime: number
     private maxUseTimes: number
@@ -37,6 +38,7 @@ class Pool implements IPool {
     constructor(redisOpts: RedisOptions, poolOpts: IPoolOpts) {
         // 配置
         this.redisOpts = redisOpts
+        this.minConnNum = poolOpts.minConnNum
         this.maxConnNum = poolOpts.maxConnNum
         this.maxWaitTime = poolOpts.maxWaitTime
         this.maxUseTimes = poolOpts.maxUseTimes
@@ -63,11 +65,11 @@ class Pool implements IPool {
         // 监听是否释放
         // 当客户释放数据库连接时，先判断该连接的引用次数是否超过了规定值
         // 如果超过就从连接池中删除该连接，否则保留为其他客户服务。
+        // 删除前判断连接数是否大于最小值
         conn.on('release', () => {
-            if (conn.useTimes >= this.maxUseTimes) {
-                conn.quit().then(() => {
-                    this.pool.splice(this.pool.findIndex(({ id }) => id == conn.id), 1)
-                }).catch((err) => {
+            if (conn.useTimes >= this.maxUseTimes && this.pool.length > this.minConnNum) {
+                this.pool.splice(this.pool.findIndex(({ id }) => id == conn.id), 1)
+                conn.quit().catch((err) => {
                     log.error(`关闭Redis连接 ${conn.id} 失败：` + err.toString())
                 })
             }
