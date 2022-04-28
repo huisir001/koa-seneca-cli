@@ -22,3 +22,34 @@ pnpm i nodemon -g
 # 安装项目依赖
 pnpm install
 ```
+
+# seneca使用HTTPS
+```js
+seneca()
+  .use(color)
+  .listen({
+    type: 'http',
+    port: '8000',
+    host: 'localhost',
+    protocol: 'https',
+    serverOptions : {
+      key : Fs.readFileSync('path/to/key.pem', 'utf8'),
+      cert : Fs.readFileSync('path/to/cert.pem', 'utf8')
+    }
+  })
+
+function color() {
+  this.add( 'color:red', function(args,done){
+    done(null, {hex:'#FF0000'});
+  })
+}
+
+seneca()
+  .client({
+    type: 'http',
+    port: '8000',
+    host: 'localhost',
+    protocol: 'https'
+  })
+  .act('color:red')
+```

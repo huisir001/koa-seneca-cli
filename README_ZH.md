@@ -29,7 +29,7 @@ NodeJS在I/O密集型应用中所表现的突出能力使得越来越多的开�
 | 数据库 | Mysql     |      |
 | 数据模型/实体 | seneca-entity  |      |
 | 缓存库 | Redis(这里使用redis而不用其他库，因为redis便于后期管理)     |      |
-| 日志   | Seneca内置 |      |
+| 日志   | Seneca内置日志，配合PM2插件输出到文件 |      |
 
 
 ## 配置文件
