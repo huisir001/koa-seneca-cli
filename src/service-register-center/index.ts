@@ -2,7 +2,7 @@
  * @Description: 服务入口
  * @Autor: HuiSir<273250950@qq.com>
  * @Date: 2022-04-22 10:30:44
- * @LastEditTime: 2022-04-28 19:09:12
+ * @LastEditTime: 2022-04-29 11:33:00
  */
 import Seneca from 'seneca'
 import register from './plugins/register.js'
@@ -12,7 +12,9 @@ import log from './hooks/useLog.js'
 // 读取配置
 const { server } = useConfig()
 
-Seneca()
+Seneca({
+    log: 'quiet'
+})
     .use(register)
     .listen(server)
     .ready((error) => {
@@ -21,5 +23,6 @@ Seneca()
             throw error
         } else {
             log.info('微服务注册中心启动成功！')
+            console.log("this", Seneca())
         }
     })

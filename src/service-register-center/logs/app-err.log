@@ -1,0 +1,14 @@
+2022-04-29 11:08:23: 微服务注册中心启动成功---
+2022-04-29 11:08:30: 微服务注册中心启动成功---
+2022-04-29 11:09:24: 微服务注册中心启动成功-----asdalkdmlsa---
+2022-04-29 11:10:46: Error: wqejnqenknasdasn dnmas dmns===
+2022-04-29 11:10:46:     at Seneca.<anonymous> (file:///C:/Users/gxh/Documents/koa-seneca-cli/src/service-register-center/index.ts:24:27)
+2022-04-29 11:10:46:     at ready_1 (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\seneca@3.26.2\node_modules\seneca\lib\ready.ts:35:20)
+2022-04-29 11:10:46:     at execute_ready (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\seneca@3.26.2\node_modules\seneca\lib\ready.ts:78:5)
+2022-04-29 11:10:46:     at Seneca.clear_ready (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\seneca@3.26.2\node_modules\seneca\lib\ready.ts:67:7)
+2022-04-29 11:10:46:     at work_fn_callback (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\r2.cnpmjs.org+gate-executor@3.1.1\node_modules\gate-executor\gate-executor.ts:196:13)
+2022-04-29 11:10:46:     at work_fn_callback (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\r2.cnpmjs.org+gate-executor@3.1.1\node_modules\gate-executor\gate-executor.ts:192:11)
+2022-04-29 11:10:46:     at Seneca.action_reply (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\seneca@3.26.2\node_modules\seneca\lib\act.ts:100:13)
+2022-04-29 11:10:46:     at Server.<anonymous> (C:\Users\gxh\Documents\koa-seneca-cli\src\service-register-center\node_modules\.pnpm\seneca-transport@7.1.0\node_modules\seneca-transport\lib\http.js:70:7)
+2022-04-29 11:10:46:     at Server.emit (events.js:315:20)
+2022-04-29 11:10:46:     at Server.<anonymous> (C:\Users\gxh\AppData\Roaming\npm\node_modules\pm2\node_modules\@pm2\io\src\metrics\httpMetrics.ts:167:50)

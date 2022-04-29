@@ -2,7 +2,7 @@
  * @Description: 日志打印
  * @Autor: HuiSir<273250950@qq.com>
  * @Date: 2022-04-25 15:15:40
- * @LastEditTime: 2022-04-28 19:09:02
+ * @LastEditTime: 2022-04-29 09:58:39
  */
 
 // 由于seneca内置有日志功能，所以这里不需要额外的如log4js等插件

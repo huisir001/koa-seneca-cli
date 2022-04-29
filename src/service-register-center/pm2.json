@@ -1,0 +1,26 @@
+{
+    "apps": [
+        {
+            "name": "asdad",
+            "script": "./dist/index.js",
+            "cwd": "./",
+            "env": {
+                "NODE_ENV": "production",
+                "REMOTE_ADDR": ""
+            },
+            "env_dev": {
+                "NODE_ENV": "development",
+                "REMOTE_ADDR": ""
+            },
+            "merge_logs": true,
+            "log_date_format": "YYYY-MM-DD HH:mm:ss",
+            "error_file": "./logs/app-err.log",
+            "out_file": "./logs/app-out.log",
+            "watch": true,
+            "ignore_watch": [
+                "node_modules",
+                "logs"
+            ]
+        }
+    ]
+}
